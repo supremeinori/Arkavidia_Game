@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class TimeRebuildY : MonoBehaviour
+using UnityEngine.InputSystem;
+public class rebuild_click : MonoBehaviour
 {
     [Header("References")]
     public Transform player;
@@ -12,6 +12,22 @@ public class TimeRebuildY : MonoBehaviour
 
     [Header("Rebuild Settings")]
     public float rebuildSpeed = 3f;
+
+    [Header("Player Input")]
+    public InputActionReference ClickAction;
+
+    private void OnEnable()
+{
+    if (ClickAction != null)
+        ClickAction.action.Enable();
+}
+
+private void OnDisable()
+{
+    if (ClickAction != null)
+        ClickAction.action.Disable();
+}
+
 
     Vector3[] initialLocalPos;
     Quaternion[] initialLocalRot;
@@ -34,11 +50,9 @@ public class TimeRebuildY : MonoBehaviour
 
     void Update()
     {
-        if (!player || !timeSwitchPoint) return;
+        if (!player || !timeSwitchPoint || ClickAction == null) return;
 
-        bool isPresent = player.transform.position.x > timeSwitchPoint.transform.position.x;
-        Debug.Log(player.position.x); 
-        Debug.Log(timeSwitchPoint.position.x);
+        bool isPresent = ClickAction.action.IsPressed();
 
         // 🔥 HANDLE TANGGA UTUH
         if (intactReference)
@@ -70,6 +84,9 @@ public class TimeRebuildY : MonoBehaviour
             {
                 // 💥 RUNTUH
                 pieces[i].isKinematic = false;
+                //  pieces[i].linearVelocity = Vector3.zero;
+                // pieces[i].angularVelocity = Vector3.zero;
+                
             }
         }
     }

@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class TimeRebuilZ : MonoBehaviour
@@ -36,7 +37,7 @@ public class TimeRebuilZ : MonoBehaviour
     {
         if (!player || !timeSwitchPoint) return;
 
-        bool isPresent = player.position.z > timeSwitchPoint.position.z;
+        bool isPresent = player.transform.position.z > timeSwitchPoint.position.z;
 
         // 🔥 HANDLE TANGGA UTUH
         if (intactReference)
