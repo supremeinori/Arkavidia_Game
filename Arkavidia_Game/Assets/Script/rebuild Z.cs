@@ -5,8 +5,8 @@ public class TimeRebuilZ : MonoBehaviour
 {
     [Header("References")]
     public Transform player;
-    public Transform timeSwitchPoint;      // Titik switch waktu
-    public GameObject intactReference;     // Tangga utuh (visual helper)
+    public Transform timeSwitchPoint;
+    public GameObject intactReference;
 
     [Header("Pieces")]
     public Rigidbody[] pieces;
@@ -16,6 +16,12 @@ public class TimeRebuilZ : MonoBehaviour
 
     Vector3[] initialLocalPos;
     Quaternion[] initialLocalRot;
+
+    void Awake()
+    {
+        // 🔥 AUTO ATTACH SEMUA PIECES
+        pieces = GetComponentsInChildren<Rigidbody>();
+    }
 
     void Start()
     {
@@ -39,16 +45,13 @@ public class TimeRebuilZ : MonoBehaviour
 
         bool isPresent = player.transform.position.z > timeSwitchPoint.position.z;
 
-        // 🔥 HANDLE TANGGA UTUH
         if (intactReference)
-            intactReference.SetActive(!isPresent); 
-        // present → OFF, past → ON (kalau mau ditampilkan)
+            intactReference.SetActive(!isPresent);
 
         for (int i = 0; i < pieces.Length; i++)
         {
             if (isPresent)
             {
-                // 🛠️ REBUILD
                 pieces[i].isKinematic = true;
 
                 pieces[i].transform.localPosition =
@@ -67,7 +70,6 @@ public class TimeRebuilZ : MonoBehaviour
             }
             else
             {
-                // 💥 RUNTUH
                 pieces[i].isKinematic = false;
             }
         }
