@@ -36,9 +36,13 @@ public class TimeRebuildY : MonoBehaviour
     {
         if (!player || !timeSwitchPoint) return;
 
+<<<<<<< Updated upstream
         bool isPresent = player.transform.position.x > timeSwitchPoint.transform.position.x;
         Debug.Log(player.position.x); 
         Debug.Log(timeSwitchPoint.position.x);
+=======
+        bool isPresent = player.position.y> timeSwitchPoint.position.y;
+>>>>>>> Stashed changes
 
         // 🔥 HANDLE TANGGA UTUH
         if (intactReference)
