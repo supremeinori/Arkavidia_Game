@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAnimationController : MonoBehaviour
+public class MovementAnimationController : MonoBehaviour
 {
+    [Header("References")]
     public Animator animator;
 
     [Header("Input Actions")]
@@ -10,30 +11,31 @@ public class PlayerAnimationController : MonoBehaviour
     public InputActionReference sprintAction;
     public InputActionReference jumpAction;
 
-    [Header("Jump Settings")]
-    public float jumpRepeatDelay = 0.35f;
-
     [Header("Ground Check")]
     public Transform groundCheckPoint;
     public float groundCheckRadius = 0.25f;
     public LayerMask groundLayer;
 
-    float nextJumpTime;
-    bool isGrounded;
+    [Header("Jump Settings")]
+    public float jumpCooldown = 0.25f;
 
-    private void Awake()
+    bool isGrounded;
+    float nextJumpTime;
+
+    void Awake()
     {
-        animator = GetComponent<Animator>();
+        if (!animator)
+            animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         if (moveAction) moveAction.action.Enable();
         if (sprintAction) sprintAction.action.Enable();
         if (jumpAction) jumpAction.action.Enable();
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         if (moveAction) moveAction.action.Disable();
         if (sprintAction) sprintAction.action.Disable();
@@ -42,60 +44,75 @@ public class PlayerAnimationController : MonoBehaviour
 
     void Update()
     {
-        // =====================
+        //-------------------
         // GROUND CHECK
-        // =====================
-        isGrounded = Physics.CheckSphere(
-            groundCheckPoint.position,
-            groundCheckRadius,
-            groundLayer);
+        //-------------------
+        if (groundCheckPoint)
+        {
+            isGrounded = Physics.CheckSphere(
+                groundCheckPoint.position,
+                groundCheckRadius,
+                groundLayer);
+        }
+        else
+        {
+            isGrounded = true;
+        }
 
         animator.SetBool("IsGrounded", isGrounded);
 
-        // =====================
-        // MOVE
-        // =====================
+        //-------------------
+        // MOVE INPUT
+        //-------------------
         Vector2 input = moveAction.action.ReadValue<Vector2>();
 
-        bool isWalking = input.magnitude > 0.1f;
+        bool moving = input.magnitude > 0.1f;
 
-        bool isRunning =
-            isWalking &&
+        bool sprinting =
+            sprintAction &&
             sprintAction.action.IsPressed();
 
-        // =====================
-        // JUMP INPUT (ONLY WHEN GROUNDED)
-        // =====================
-        bool jumpHeld = jumpAction.action.IsPressed();
-        bool sprintHeld = sprintAction.action.IsPressed();
+        animator.SetBool("IsWalk", moving && !sprinting);
+        animator.SetBool("IsRun", moving && sprinting);
 
-        bool canTriggerJump =
+        //-------------------
+        // FALLING
+        //-------------------
+        animator.SetBool("IsFalling", !isGrounded);
+
+        //-------------------
+        // JUMP / HIGH JUMP
+        //-------------------
+        bool jumpPressed =
+            jumpAction &&
+            jumpAction.action.WasPressedThisFrame();
+
+        bool canJump =
             isGrounded &&
-            jumpHeld &&
-            Time.time >= nextJumpTime;
+            Time.time >= nextJumpTime &&
+            jumpPressed;
 
-        bool normalJump = canTriggerJump && !sprintHeld;
-        bool longJump = canTriggerJump && sprintHeld;
+        if (canJump)
+        {
+            animator.ResetTrigger("Jump");
+            animator.ResetTrigger("HighJump");
 
-        if (canTriggerJump)
-            nextJumpTime = Time.time + jumpRepeatDelay;
+            if (sprinting)
+                animator.SetTrigger("HighJump");
+            else
+                animator.SetTrigger("Jump");
 
-        // =====================
-        // SEND TO ANIMATOR
-        // =====================
-        animator.SetBool("Iswalk", isWalking);
-        animator.SetBool("Isrun", isRunning);
-
-        animator.SetBool("IsJump", normalJump);
-        animator.SetBool("IsLongJump", longJump);
+            nextJumpTime = Time.time + jumpCooldown;
+        }
     }
 
-    // Optional: visualize ground check
     void OnDrawGizmosSelected()
     {
         if (!groundCheckPoint) return;
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
+        Gizmos.DrawWireSphere(
+            groundCheckPoint.position,
+            groundCheckRadius);
     }
 }

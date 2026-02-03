@@ -9,7 +9,7 @@ public class Example : MonoBehaviour
     public float playerSprint = 10.0f;
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
-    private float currentSpeed = 0.0f;
+    // private float currentSpeed = 0.0f;
 
     public CharacterController controller;
     private Vector3 playerVelocity;

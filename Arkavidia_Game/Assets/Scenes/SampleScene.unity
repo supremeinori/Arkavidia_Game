@@ -3485,7 +3485,7 @@ Animator:
   m_GameObject: {fileID: 6832022284258460419}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 68b54b1b85658884888fa8b6a3b14b91, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2d72f85853ce9a642b059ca51c39a11e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 65b1c7bd1f215964db2946aa36d4fdd3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3513,12 +3513,12 @@ MonoBehaviour:
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  jumpRepeatDelay: 0.1
   groundCheckPoint: {fileID: 1591655715}
   groundCheckRadius: 0.25
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
+  jumpCooldown: 0.25
 --- !u!4 &8241818750814378655
 Transform:
   m_ObjectHideFlags: 0
