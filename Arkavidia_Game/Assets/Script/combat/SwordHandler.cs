@@ -10,14 +10,19 @@ public class SwordHandler : MonoBehaviour
 
     void Start()
     {
+        if (sword == null)
+        {
+            Debug.LogError("Sword belum di-assign!");
+            return;
+        }
+
         AttachToBack();
     }
 
     public void Equip()
     {
         sword.transform.SetParent(handSocket);
-        sword.transform.localPosition = Vector3.zero;
-        sword.transform.localRotation = Quaternion.identity;
+        ResetTransform();
         isEquipped = true;
     }
 
@@ -29,8 +34,13 @@ public class SwordHandler : MonoBehaviour
     void AttachToBack()
     {
         sword.transform.SetParent(backSocket);
+        ResetTransform();
+        isEquipped = false;
+    }
+
+    void ResetTransform()
+    {
         sword.transform.localPosition = Vector3.zero;
         sword.transform.localRotation = Quaternion.identity;
-        isEquipped = false;
     }
 }

@@ -18,7 +18,7 @@ public class CombatController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (swordHandler.isEquipped)
-                animator.SetTrigger("Sheath");
+                animator.SetTrigger("Unequip");
             else
                 animator.SetTrigger("Equip");
         }
