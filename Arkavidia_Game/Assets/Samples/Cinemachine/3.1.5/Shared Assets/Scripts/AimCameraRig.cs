@@ -11,7 +11,11 @@ namespace Unity.Cinemachine.Samples
         CinemachineVirtualCameraBase FreeCamera;
 
         // 👉 Aim hanya pakai klik kanan
-        bool IsAiming => Input.GetMouseButton(1);
+        // 👉 Aim hanya pakai CTRL
+bool IsAiming =>
+    Input.GetKey(KeyCode.LeftControl) ||
+    Input.GetKey(KeyCode.RightControl);
+
 
         protected override void Start()
         {
