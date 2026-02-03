@@ -135676,16 +135676,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
-  AimMode:
-    Value: 0
-    Center: 0
-    Range: {x: -1, y: 1}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 0
-      Time: 0
-    Restrictions: 6
 --- !u!4 &794622786432297411
 Transform:
   m_ObjectHideFlags: 0
@@ -135981,15 +135971,26 @@ MonoBehaviour:
   Landed:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   Damping: 0.5
   Strafe: 1
   InputForward: 0
   UpMode: 1
   CameraOverride: {fileID: 0}
   GroundLayers:
-    serializedVersion: 2
     m_Bits: 1
   Gravity: 10
+  m_TimeLastGrounded: 0
+  m_CurrentVelocityXZ: {x: 0, y: 0, z: 0}
+  m_LastInput: {x: 0, y: 0, z: 0}
+  m_CurrentVelocityY: 0
+  m_IsSprinting: 0
+  m_IsJumping: 0
+  m_Controller: {fileID: 0}
+  m_InTopHemisphere: 1
+  m_TimeInHemisphere: 100
+  m_LastRawInput: {x: 0, y: 0, z: 0}
+  m_Upsidedown: {x: -1, y: 0, z: 0, w: -0.00000004371139}
 --- !u!1 &1737513501447661246
 GameObject:
   m_ObjectHideFlags: 0
@@ -136698,20 +136699,7 @@ MonoBehaviour:
   SuppressInputWhileBlending: 1
   IgnoreTimeScale: 0
   m_ControllerManager:
-    Controllers:
-    - Name: Aim
-      Owner: {fileID: 690879158306872430}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -1608118824973676762, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Fire3
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
+    Controllers: []
   PlayerIndex: -1
   AutoEnableInputs: 1
 --- !u!114 &3302635210462038096
@@ -137264,6 +137252,13 @@ MonoBehaviour:
   animator: {fileID: 8208507386680446440}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  jumpAction: {fileID: 0}
+  groundCheckPoint: {fileID: 0}
+  groundCheckRadius: 0.25
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpCooldown: 0.25
 --- !u!4 &5432676733240003702
 Transform:
   m_ObjectHideFlags: 0
@@ -137348,58 +137343,6 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   m_ControllerManager:
     Controllers:
-    - Name: Move X
-      Owner: {fileID: 1735157572112813356}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -1680190386980627800, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Horizontal
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
-    - Name: Move Z
-      Owner: {fileID: 1735157572112813356}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -1680190386980627800, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Vertical
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
-    - Name: Jump
-      Owner: {fileID: 1735157572112813356}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: 6539296782897260151, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Jump
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
-    - Name: Sprint
-      Owner: {fileID: 1735157572112813356}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -3285510275856705445, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Fire2
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
     - Name: Horizontal Look
       Owner: {fileID: 8408240913800729160}
       Enabled: 1
