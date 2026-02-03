@@ -2380,7 +2380,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3458166586436082831}
   - component: {fileID: 8208507385668847519}
-  - component: {fileID: 5353331424630617843}
   m_Layer: 0
   m_Name: Miro_02@Running
   m_TagString: Untagged
@@ -2427,21 +2426,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5353331424630617843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6832022282569723663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc88368f789fec849b092b3d750c8674, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  animator: {fileID: 8208507385668847519}
-  moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  sprintAction: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &6866927310027939452
 GameObject:
   m_ObjectHideFlags: 0
