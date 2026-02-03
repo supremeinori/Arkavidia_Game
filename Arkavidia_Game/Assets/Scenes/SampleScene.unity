@@ -796,7 +796,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3458166586903212163}
-  - {fileID: 1817220457826057259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1612308553385932941
@@ -830,74 +829,6 @@ Transform:
   - {fileID: 7604583236486211199}
   m_Father: {fileID: 5547340781536901826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1735157572504202071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8418435351212571825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297aaca66939f724fbbc8f0c485168bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1.3
-  SprintSpeed: 10
-  JumpSpeed: 5
-  SprintJumpSpeed: 7
-  MoveX:
-    Value: 0
-    Center: 0
-    Range: {x: -1, y: 1}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 0
-      Time: 0
-    Restrictions: 6
-  MoveZ:
-    Value: 0
-    Center: 0
-    Range: {x: -1, y: 1}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 0
-      Time: 0
-    Restrictions: 6
-  Jump:
-    Value: 0
-    Center: 0
-    Range: {x: -1, y: 1}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 0
-      Time: 0
-    Restrictions: 6
-  Sprint:
-    Value: 0
-    Center: 0
-    Range: {x: -1, y: 1}
-    Wrap: 0
-    Recentering:
-      Enabled: 0
-      Wait: 0
-      Time: 0
-    Restrictions: 6
-  Landed:
-    m_PersistentCalls:
-      m_Calls: []
-  Damping: 0.5
-  Strafe: 1
-  InputForward: 0
-  UpMode: 1
-  CameraOverride: {fileID: 7495973352853048482}
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  Gravity: 10
 --- !u!1 &1737513501063610565
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,11 +872,11 @@ Transform:
   m_GameObject: {fileID: 4702115519950237256}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 0.50499994, z: 0}
+  m_LocalPosition: {x: 10.0529175, y: -1.8870099, z: -0.09075928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1491031986447761336}
+  m_Father: {fileID: 9187480312625635976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831217984855400596
 GameObject:
@@ -2438,12 +2369,12 @@ MonoBehaviour:
   m_ControllerManager:
     Controllers:
     - Name: Move X
-      Owner: {fileID: 1735157572504202071}
+      Owner: {fileID: 8418435351212571826}
       Enabled: 1
       Input:
         InputAction: {fileID: -1680190386980627800, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
         Gain: 1
-        LegacyInput: Horizontal
+        LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
       InputValue: 0
@@ -2451,12 +2382,12 @@ MonoBehaviour:
         AccelTime: 0
         DecelTime: 0
     - Name: Move Z
-      Owner: {fileID: 1735157572504202071}
+      Owner: {fileID: 8418435351212571826}
       Enabled: 1
       Input:
         InputAction: {fileID: -1680190386980627800, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
         Gain: 1
-        LegacyInput: Vertical
+        LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
       InputValue: 0
@@ -2464,12 +2395,12 @@ MonoBehaviour:
         AccelTime: 0
         DecelTime: 0
     - Name: Jump
-      Owner: {fileID: 1735157572504202071}
+      Owner: {fileID: 8418435351212571826}
       Enabled: 1
       Input:
         InputAction: {fileID: 6539296782897260151, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
         Gain: 1
-        LegacyInput: Jump
+        LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
       InputValue: 0
@@ -2477,51 +2408,12 @@ MonoBehaviour:
         AccelTime: 0
         DecelTime: 0
     - Name: Sprint
-      Owner: {fileID: 1735157572504202071}
+      Owner: {fileID: 8418435351212571826}
       Enabled: 1
       Input:
         InputAction: {fileID: -3285510275856705445, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
         Gain: 1
-        LegacyInput: Fire2
-        LegacyGain: 1
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0
-        DecelTime: 0
-    - Name: Horizontal Look
-      Owner: {fileID: 8408240913407783987}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Mouse X
-        LegacyGain: 50
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0.2
-        DecelTime: 0.2
-    - Name: Vertical Look
-      Owner: {fileID: 8408240913407783987}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: -1
-        LegacyInput: Mouse Y
-        LegacyGain: -50
-        CancelDeltaTime: 0
-      InputValue: 0
-      Driver:
-        AccelTime: 0.2
-        DecelTime: 0.2
-    - Name: Fire
-      Owner: {fileID: 6965208690693779056}
-      Enabled: 1
-      Input:
-        InputAction: {fileID: 1120369429361536294, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
-        Gain: 1
-        LegacyInput: Fire1
+        LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
       InputValue: 0
@@ -3777,7 +3669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491031986447761336}
   - component: {fileID: 3350353126368303404}
-  - component: {fileID: 1735157572504202071}
+  - component: {fileID: 8418435351212571826}
   - component: {fileID: 5642008042456489148}
   m_Layer: 0
   m_Name: Player
@@ -3786,6 +3678,74 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8418435351212571826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8418435351212571825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297aaca66939f724fbbc8f0c485168bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unity.Cinemachine.Samples.SimplePlayerController
+  Speed: 1
+  SprintSpeed: 4
+  JumpSpeed: 4
+  SprintJumpSpeed: 6
+  MoveX:
+    Value: 0
+    Center: 0
+    Range: {x: -1, y: 1}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 0
+      Time: 0
+    Restrictions: 6
+  MoveZ:
+    Value: 0
+    Center: 0
+    Range: {x: -1, y: 1}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 0
+      Time: 0
+    Restrictions: 6
+  Jump:
+    Value: 0
+    Center: 0
+    Range: {x: -1, y: 1}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 0
+      Time: 0
+    Restrictions: 6
+  Sprint:
+    Value: 0
+    Center: 0
+    Range: {x: -1, y: 1}
+    Wrap: 0
+    Recentering:
+      Enabled: 0
+      Wait: 0
+      Time: 0
+    Restrictions: 6
+  Landed:
+    m_PersistentCalls:
+      m_Calls: []
+  Damping: 0.5
+  Strafe: 0
+  InputForward: 0
+  UpMode: 1
+  CameraOverride: {fileID: 0}
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  Gravity: 10
 --- !u!1 &8462557802659245166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,6 +3942,7 @@ Transform:
   m_Children:
   - {fileID: 2884987724716709607}
   - {fileID: 1612308553385932941}
+  - {fileID: 1817220457826057259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9214161223154319335
