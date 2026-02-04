@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class TelekinesisObject : MonoBehaviour
 {
-    public float damage = 25f;
+    public float damageMultiplier = 10f;
 
-    private Rigidbody rb;
-    private bool isThrown = false;
+    Rigidbody rb;
+    bool isThrown;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -18,17 +18,22 @@ public class TelekinesisObject : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
-{
-    if (!isThrown) return;
-
-    EnemyHealth enemy = collision.collider.GetComponent<EnemyHealth>();
-    if (enemy != null)
     {
-        float damage = rb.linearVelocity.magnitude * 10f;
-        enemy.TakeDamage(damage);
+        if (!isThrown) return;
+
+        EnemyHealth enemy =
+            collision.collider.GetComponentInParent<EnemyHealth>();
+
+        if (enemy != null)
+        {
+            float speed = rb.linearVelocity.magnitude;
+            float finalDamage = speed * damageMultiplier;
+
+            enemy.TakeDamage(finalDamage);
+        }
+        Debug.Log("Telekinesis hit: " + collision.collider.name);
+
+        // supaya gak ngerusak berkali-kali
+        isThrown = false;
     }
-
-    isThrown = false;
-}
-
 }
