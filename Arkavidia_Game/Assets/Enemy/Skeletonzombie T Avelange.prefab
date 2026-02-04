@@ -96,18 +96,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2870603133958919241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a903f1c273407354c9ccdcd58a4394c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd7dc820cb2b0d49b1fe3d8e93be9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   player: {fileID: 0}
-  animator: {fileID: 8826371576442328201}
+  animator: {fileID: 0}
   playerHealth: {fileID: 0}
   detectionRadius: 15
   attackRange: 2
   patrolRadius: 20
   attackCooldown: 2
   patrolIdleTime: 3
-  rotationSpeed: 1
+  rotationSpeed: 7
   attackDuration: 1
 --- !u!195 &7189234802016524371
 NavMeshAgent:
@@ -158,8 +158,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &8826371576442328201 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 78c4a1bbcf22992478f2951ba58a97f9, type: 3}
-  m_PrefabInstance: {fileID: 3104958743401703704}
-  m_PrefabAsset: {fileID: 0}
