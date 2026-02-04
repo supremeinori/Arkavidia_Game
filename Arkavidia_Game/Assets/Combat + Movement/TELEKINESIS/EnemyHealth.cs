@@ -20,8 +20,9 @@ AudioSource audioSource;
 {
     currentHealth = maxHealth;
     cam = Camera.main;
+    audioSource = GetComponent<AudioSource>(); // 🔥 INI PENTING
 
-    GameManager.Instance.RegisterEnemy();
+    // GameManager.Instance.RegisterEnemy();
 
     UpdateHealthUI();
 }
@@ -60,7 +61,7 @@ AudioSource audioSource;
 
     void Die()
 {
-    GameManager.Instance.EnemyDied();
+    // GameManager.Instance.EnemyDied();
     Destroy(gameObject);
 }
 }

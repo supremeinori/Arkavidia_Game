@@ -291,7 +291,6 @@ GameObject:
   - component: {fileID: 1958143102230729988}
   - component: {fileID: 7280219517297479551}
   - component: {fileID: 6446245211560409026}
-  - component: {fileID: 7205626072082982795}
   m_Layer: 0
   m_Name: platform runtuh (1)
   m_TagString: Untagged
@@ -546,22 +545,6 @@ MonoBehaviour:
   - {fileID: 7070417534926867395}
   - {fileID: 1597693424885069392}
   rebuildSpeed: 3
---- !u!114 &7205626072082982795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947577824659777851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f43adbafd90b9440b5714a6793760c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeReactiveObject
-  timeController: {fileID: 0}
-  timeSwitchPoint: {fileID: 1027782046695059261}
-  presentState: {fileID: 0}
-  pastState: {fileID: 3379254343421698414}
 --- !u!1 &1586146403278806196
 GameObject:
   m_ObjectHideFlags: 0
