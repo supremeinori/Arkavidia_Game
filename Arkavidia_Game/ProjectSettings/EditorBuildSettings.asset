@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a30172953f35eef49980e37285f81a6a
+  - enabled: 1
+    path: Assets/Scenes/CHAPTER1.unity
+    guid: 6af7c3d1ab6b9454ca278c03b2682a37
+  - enabled: 1
+    path: Assets/Scenes/AlamBarzah.unity
+    guid: a1796f1398a5dd74fb9561972f76fa04
+  - enabled: 1
+    path: Assets/Scenes/CHAPTER2.unity
+    guid: e2bf0cf50f836c647807a9600e22910d
+  - enabled: 1
+    path: Assets/Scenes/CREDIT.unity
+    guid: 4f9cb14e7a69b5e4ca69ef90a7d1cfbc
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
