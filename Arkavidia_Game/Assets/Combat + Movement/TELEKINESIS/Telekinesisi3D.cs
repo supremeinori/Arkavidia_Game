@@ -10,9 +10,8 @@ public class Telekinesis3D : MonoBehaviour
     public float throwForce = 30f;
 
     [Header("Input Actions")]
-    public InputActionReference grabAction;    // klik kanan
-    public InputActionReference throwAction;   // klik kiri
-    public InputActionReference aimAction;     // CTRL (aim)
+    public InputActionReference grabAction;   // klik kanan
+    public InputActionReference throwAction;  // klik kiri
 
     private Rigidbody heldObject;
     private TelekinesisObject tkObject;
@@ -27,31 +26,26 @@ public class Telekinesis3D : MonoBehaviour
     {
         if (grabAction) grabAction.action.Enable();
         if (throwAction) throwAction.action.Enable();
-        if (aimAction) aimAction.action.Enable();
     }
 
     void OnDisable()
     {
         if (grabAction) grabAction.action.Disable();
         if (throwAction) throwAction.action.Disable();
-        if (aimAction) aimAction.action.Disable();
     }
 
     void Update()
     {
-        bool isAiming = aimAction.action.IsPressed();
-        bool grabHeld = grabAction.action.IsPressed();
-
         // =====================
-        // GRAB (CTRL + RMB)
+        // GRAB
         // =====================
-        if (isAiming && grabAction.action.WasPressedThisFrame())
+        if (grabAction.action.WasPressedThisFrame())
             GrabObject();
 
         // =====================
         // HOLD
         // =====================
-        if (isAiming && grabHeld && heldObject != null)
+        if (grabAction.action.IsPressed() && heldObject != null)
             HoldObject();
 
         // =====================
@@ -61,9 +55,9 @@ public class Telekinesis3D : MonoBehaviour
             ThrowObject();
 
         // =====================
-        // DROP (release RMB or CTRL)
+        // DROP
         // =====================
-        if ((!grabHeld || !isAiming) && heldObject != null)
+        if (grabAction.action.WasReleasedThisFrame())
             DropObject();
     }
 

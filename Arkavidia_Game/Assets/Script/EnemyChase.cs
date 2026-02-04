@@ -10,11 +10,18 @@ public class EnemyChase : MonoBehaviour
     public float chaseDistance = 15f;
     public float stopDistance = 2f;
 
+    [Header("Audio")]
+    public AudioClip detectSFX;
+    AudioSource audioSource;
+
     NavMeshAgent agent;
+
+    bool hasDetectedPlayer; // supaya sound cuma sekali
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>(); // 🔥 penting
 
         if (!player)
         {
@@ -32,12 +39,22 @@ public class EnemyChase : MonoBehaviour
 
         if (dist <= chaseDistance)
         {
+            // ▶ pertama kali detect
+            if (!hasDetectedPlayer)
+            {
+                hasDetectedPlayer = true;
+
+                if (detectSFX && audioSource)
+                    audioSource.PlayOneShot(detectSFX);
+            }
+
             agent.isStopped = false;
             agent.SetDestination(player.position);
         }
         else
         {
             agent.isStopped = true;
+            hasDetectedPlayer = false; // reset kalau player kabur
         }
 
         agent.stoppingDistance = stopDistance;

@@ -4,64 +4,49 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-    float currentHealth;
+    private float currentHealth;
 
     [Header("UI")]
     public Image healthFill;
     public RectTransform healthBar;
-    [Header("Audio")]
-public AudioClip hitSFX;
-AudioSource audioSource;
-
-
-    Camera cam;
+    private Camera cam;
 
     void Start()
-{
-    currentHealth = maxHealth;
-    cam = Camera.main;
-    audioSource = GetComponent<AudioSource>(); // 🔥 INI PENTING
+    {
+        currentHealth = maxHealth;
+        cam = Camera.main;
+        UpdateHealthUI();
 
-    // GameManager.Instance.RegisterEnemy();
-
-    UpdateHealthUI();
-}
+    }
 
     void Update()
     {
         FaceCamera();
     }
 
-   public void TakeDamage(float damage)
-{
-    currentHealth -= damage;
-    currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-    UpdateHealthUI();
+        UpdateHealthUI();
 
-    if (hitSFX && audioSource)
-        audioSource.PlayOneShot(hitSFX);
-
-    if (currentHealth <= 0)
-        Die();
-}
-
+        if (currentHealth <= 0)
+            Die();
+    }
 
     void UpdateHealthUI()
     {
-        if (healthFill != null)
-            healthFill.fillAmount = currentHealth / maxHealth;
+        healthFill.fillAmount = currentHealth / maxHealth;
     }
 
     void FaceCamera()
     {
-        if (healthBar != null && cam != null)
-            healthBar.forward = cam.transform.forward;
+        healthBar.forward = cam.transform.forward;
     }
 
     void Die()
-{
-    // GameManager.Instance.EnemyDied();
-    Destroy(gameObject);
-}
+    {
+        Destroy(gameObject);
+    }
 }

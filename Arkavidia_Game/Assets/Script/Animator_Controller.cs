@@ -58,8 +58,7 @@ public class MovementAnimationController : MonoBehaviour
         {
             isGrounded = true;
         }
-
-
+        Debug.Log(!isGrounded);
 
 
 
