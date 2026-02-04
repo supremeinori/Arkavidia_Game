@@ -21,19 +21,36 @@ public class TelekinesisObject : MonoBehaviour
     {
         if (!isThrown) return;
 
+        Debug.Log("Telekinesis hit: " + collision.collider.name);
+
+        float speed = rb.linearVelocity.magnitude;
+        float finalDamage = speed * damageMultiplier;
+
+        // ===== BOSS =====
+        BossHealth boss =
+            collision.collider.GetComponentInParent<BossHealth>();
+
+        if (boss != null)
+        {
+            Debug.Log("[TK] Hit Boss for " + finalDamage);
+            boss.TakeDamage(finalDamage);
+            isThrown = false;
+            return;
+        }
+
+        // ===== ENEMY NORMAL =====
         EnemyHealth enemy =
             collision.collider.GetComponentInParent<EnemyHealth>();
 
         if (enemy != null)
         {
-            float speed = rb.linearVelocity.magnitude;
-            float finalDamage = speed * damageMultiplier;
-
+            Debug.Log("[TK] Hit Enemy for " + finalDamage);
             enemy.TakeDamage(finalDamage);
+            isThrown = false;
+            return;
         }
-        Debug.Log("Telekinesis hit: " + collision.collider.name);
 
-        // supaya gak ngerusak berkali-kali
+        // kalau nabrak tembok dll
         isThrown = false;
     }
 }
