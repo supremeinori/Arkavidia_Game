@@ -13,8 +13,9 @@ namespace Unity.Cinemachine.Samples
         // 👉 Aim hanya pakai klik kanan
         // 👉 Aim hanya pakai CTRL
 bool IsAiming =>
-    Input.GetKey(KeyCode.LeftControl) ||
-    Input.GetKey(KeyCode.RightControl);
+    Input.GetMouseButton(1); // RMB = aim
+
+    
 
 
         protected override void Start()

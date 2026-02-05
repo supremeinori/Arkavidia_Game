@@ -429,7 +429,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 2231851097231181014}
   - component: {fileID: 2537948833079327000}
   - component: {fileID: 7735622526640967444}
-  - component: {fileID: 2835848764349461540}
+  - component: {fileID: 7254344719121625979}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -521,6 +521,7 @@ MonoBehaviour:
   healthFill: {fileID: 565787452879969202}
   healthBar: {fileID: 7784950891104702646}
   hitSFX: {fileID: 8300000, guid: 62a45eecf7a760b43a18dccf6c22692a, type: 3}
+  deathSFX: {fileID: 0}
 --- !u!82 &2537948833079327000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -632,7 +633,7 @@ NavMeshAgent:
   m_Acceleration: 8.19
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -640,21 +641,28 @@ NavMeshAgent:
   m_BaseOffset: -0.23
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2835848764349461540
-MonoBehaviour:
+--- !u!95 &7254344719121625979
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3205386304314346915}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177a3c03088638c4e822a68f388efc7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  player: {fileID: 0}
-  chaseDistance: 15
-  stopDistance: 2
+  m_Avatar: {fileID: 9000000, guid: 224efcb30deeb0a4da8d2318732d6fc4, type: 3}
+  m_Controller: {fileID: 9100000, guid: 42085179258730345bd220ba433eff07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3264580113316899144
 GameObject:
   m_ObjectHideFlags: 0

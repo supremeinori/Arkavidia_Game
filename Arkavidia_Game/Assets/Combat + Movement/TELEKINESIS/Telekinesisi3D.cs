@@ -37,35 +37,36 @@ public class Telekinesis3D : MonoBehaviour
         if (aimAction) aimAction.action.Disable();
     }
 
-    void Update()
-    {
-        bool isAiming = aimAction.action.IsPressed();
-        bool grabHeld = grabAction.action.IsPressed();
+   void Update()
+{
+    bool grabHeld = grabAction.action.IsPressed();
+    bool isAiming = grabHeld;
 
-        // =====================
-        // GRAB (CTRL + RMB)
-        // =====================
-        if (isAiming && grabAction.action.WasPressedThisFrame())
-            GrabObject();
+    // =====================
+    // GRAB (RMB)
+    // =====================
+    if (grabAction.action.WasPressedThisFrame())
+        GrabObject();
 
-        // =====================
-        // HOLD
-        // =====================
-        if (isAiming && grabHeld && heldObject != null)
-            HoldObject();
+    // =====================
+    // HOLD
+    // =====================
+    if (grabHeld && heldObject != null)
+        HoldObject();
 
-        // =====================
-        // THROW
-        // =====================
-        if (throwAction.action.WasPressedThisFrame() && heldObject != null)
-            ThrowObject();
+    // =====================
+    // THROW (LMB)
+    // =====================
+    if (throwAction.action.WasPressedThisFrame() && heldObject != null)
+        ThrowObject();
 
-        // =====================
-        // DROP (release RMB or CTRL)
-        // =====================
-        if ((!grabHeld || !isAiming) && heldObject != null)
-            DropObject();
-    }
+    // =====================
+    // DROP (release RMB)
+    // =====================
+    if (!grabHeld && heldObject != null)
+        DropObject();
+}
+
 
     // ------------------------------------------------------
 
