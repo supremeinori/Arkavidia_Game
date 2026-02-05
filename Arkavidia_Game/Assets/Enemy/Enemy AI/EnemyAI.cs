@@ -7,6 +7,9 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public Animator animator;
     public PlayerHealth playerHealth;
+    [Header("Boss UI")]
+    public BossHealth bossHealth;
+
 
     [Header("Settings")]
     public float detectionRadius = 15f;
@@ -45,6 +48,14 @@ public class EnemyAI : MonoBehaviour
         cooldownTimer -= Time.deltaTime;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            if (bossHealth != null)
+            {
+         if (distanceToPlayer <= detectionRadius)
+        bossHealth.ShowUI();
+                else
+             bossHealth.HideUI();
+                }
+
 
         // Cancel attack if player leaves attack range
         if (isAttacking && distanceToPlayer > attackRange)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -9,43 +10,44 @@ public class EnemyHealth : MonoBehaviour
     [Header("UI")]
     public Image healthFill;
     public RectTransform healthBar;
-    [Header("Audio")]
-public AudioClip hitSFX;
-AudioSource audioSource;
 
+    [Header("Audio")]
+    public AudioClip hitSFX;
+    public AudioClip deathSFX; // 🔥 sound mati
+    AudioSource audioSource;
 
     Camera cam;
+    bool isDead;
 
     void Start()
-{
-    currentHealth = maxHealth;
-    cam = Camera.main;
-    audioSource = GetComponent<AudioSource>(); // 🔥 INI PENTING
+    {
+        currentHealth = maxHealth;
+        cam = Camera.main;
+        audioSource = GetComponent<AudioSource>();
 
-    // GameManager.Instance.RegisterEnemy();
-
-    UpdateHealthUI();
-}
+        UpdateHealthUI();
+    }
 
     void Update()
     {
         FaceCamera();
     }
 
-   public void TakeDamage(float damage)
-{
-    currentHealth -= damage;
-    currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    public void TakeDamage(float damage)
+    {
+        if (isDead) return;
 
-    UpdateHealthUI();
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-    if (hitSFX && audioSource)
-        audioSource.PlayOneShot(hitSFX);
+        UpdateHealthUI();
 
-    if (currentHealth <= 0)
-        Die();
-}
+        if (hitSFX && audioSource)
+            audioSource.PlayOneShot(hitSFX);
 
+        if (currentHealth <= 0)
+            Die();
+    }
 
     void UpdateHealthUI()
     {
@@ -60,8 +62,21 @@ AudioSource audioSource;
     }
 
     void Die()
-{
-    // GameManager.Instance.EnemyDied();
-    Destroy(gameObject);
-}
+    {
+        if (isDead) return;
+        isDead = true;
+
+        // play death sound
+        if (deathSFX && audioSource)
+            audioSource.PlayOneShot(deathSFX);
+
+        // delay destroy supaya sound kedengeran
+        StartCoroutine(DestroyAfterDelay(1.5f));
+    }
+
+    IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
 }

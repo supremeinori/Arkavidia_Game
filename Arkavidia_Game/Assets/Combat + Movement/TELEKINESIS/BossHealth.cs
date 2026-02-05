@@ -12,7 +12,20 @@ public class BossHealth : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip hitSFX;
+    public AudioClip deathSFX; // 🔥 sound mati boss
     AudioSource audioSource;
+
+    public void ShowUI()
+    {
+        if (bossUIRoot && !bossUIRoot.activeSelf)
+            bossUIRoot.SetActive(true);
+    }
+
+    public void HideUI()
+    {
+        if (bossUIRoot && bossUIRoot.activeSelf)
+            bossUIRoot.SetActive(false);
+    }
 
     void Start()
     {
@@ -22,7 +35,7 @@ public class BossHealth : MonoBehaviour
         Debug.Log($"[BossHealth] START HP = {currentHealth}");
 
         if (bossUIRoot)
-            bossUIRoot.SetActive(true);
+            bossUIRoot.SetActive(false);
 
         if (bossHealthFill)
             bossHealthFill.fillAmount = 1f;
@@ -53,8 +66,10 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("[BossHealth] BOSS DEAD");
 
-        if (bossUIRoot)
-            bossUIRoot.SetActive(false);
+        if (deathSFX && audioSource)
+            audioSource.PlayOneShot(deathSFX); // 🔊 sound mati boss
+
+        HideUI();
 
         Destroy(gameObject);
     }

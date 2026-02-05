@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip hitSFX;
+    public AudioClip deathSFX; // 🔥 sound mati
     AudioSource audioSource;
 
     [Header("Animation")]
@@ -51,13 +52,12 @@ public class PlayerHealth : MonoBehaviour
 
         Debug.Log("Player Died");
 
+        if (deathSFX && audioSource)
+            audioSource.PlayOneShot(deathSFX); // 🔊 sound mati
+
         if (animator)
             animator.SetTrigger("Die");
 
-        // stop semua movement
-        // SendMessage("DisableMovement", SendMessageOptions.DontRequireReceiver);
-
-        // freeze game sementara
-        // Time.timeScale = 0f;
+        // nanti bisa freeze / UI game over
     }
 }
