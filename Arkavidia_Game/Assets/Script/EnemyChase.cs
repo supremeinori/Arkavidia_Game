@@ -47,8 +47,7 @@ public class EnemySmallAI : MonoBehaviour
             if (p) player = p.transform;
         }
 
-        if (!playerHealth && player)
-            playerHealth = player.GetComponent<PlayerHealth>();
+       if (playerHealth == null && player != null) playerHealth = player.GetComponent<PlayerHealth>();
 
         Debug.Log($"[EnemySmallAI] START on {name}");
         Debug.Log($"Player found = {player}");
@@ -199,10 +198,8 @@ public class EnemySmallAI : MonoBehaviour
         isIdle = false;
         isPatrolling = false;
 
-        if (agent.isOnNavMesh && player)
-        {
+         if (agent.isOnNavMesh && player != null)
             agent.SetDestination(player.position);
-        }
     }
 
     // =====================
@@ -248,20 +245,28 @@ public class EnemySmallAI : MonoBehaviour
     // DAMAGE
     // =====================
 
+    // public void DealDamage()
+    // {
+    //     float dist =
+    //         Vector3.Distance(transform.position, player.position);
+
+    //     Debug.Log(
+    //         $"[EnemySmallAI] DEAL DAMAGE CALLED | Dist={dist:F2} | InRange={dist <= attackRange}");
+
+    //     if (!isAttacking) return;
+
+    //     if (dist <= attackRange)
+    //     {
+    //         Debug.Log("[EnemySmallAI] >>> PLAYER DAMAGED <<<");
+    //         playerHealth.TakeDamage(damage);
+    //     }
+    // }
+
     public void DealDamage()
     {
-        float dist =
-            Vector3.Distance(transform.position, player.position);
-
-        Debug.Log(
-            $"[EnemySmallAI] DEAL DAMAGE CALLED | Dist={dist:F2} | InRange={dist <= attackRange}");
-
-        if (!isAttacking) return;
-
-        if (dist <= attackRange)
+        if (Vector3.Distance(transform.position, player.position) <= attackRange)
         {
-            Debug.Log("[EnemySmallAI] >>> PLAYER DAMAGED <<<");
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(damage); // Damage amount
         }
     }
 
@@ -277,9 +282,23 @@ public class EnemySmallAI : MonoBehaviour
         attackTimer = 0f;
     }
 
-    void CancelAttack()
+    // void CancelAttack()
+    // {
+    //     Debug.Log("[EnemySmallAI] CANCEL ATTACK");
+
+    //     isAttacking = false;
+    //     attackTimer = 0f;
+    //     cooldownTimer = attackCooldown;
+
+    //     animator.ResetTrigger("Attack");
+
+    //     if (agent.isOnNavMesh && player)
+    //         agent.SetDestination(player.position);
+    // }
+
+     public void CancelAttack()
     {
-        Debug.Log("[EnemySmallAI] CANCEL ATTACK");
+        if (!isAttacking) return;
 
         isAttacking = false;
         attackTimer = 0f;
@@ -287,9 +306,16 @@ public class EnemySmallAI : MonoBehaviour
 
         animator.ResetTrigger("Attack");
 
-        if (agent.isOnNavMesh && player)
+        // Instantly cut the attack animation
+        if (animator.HasState(0, Animator.StringToHash("Walk")))
+            animator.CrossFade("Walk", 0.1f);
+        else if (animator.HasState(0, Animator.StringToHash("Walk")))
+            animator.CrossFade("Walk", 0.1f);
+
+        if (agent.isOnNavMesh && player != null)
             agent.SetDestination(player.position);
     }
+
 
     // =====================
     // ROTATION

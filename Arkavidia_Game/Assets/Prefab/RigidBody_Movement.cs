@@ -78,7 +78,7 @@ public class RigidbodyPlayerInputSystem : MonoBehaviour
         Vector3 targetVelocity = moveDir.normalized * speed;
 
         Vector3 currentVel =
-            new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         Vector3 velocityChange = targetVelocity - currentVel;
 
@@ -87,7 +87,7 @@ public class RigidbodyPlayerInputSystem : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         float finalJumpForce = jumpForce;
 
