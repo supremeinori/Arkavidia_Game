@@ -363,7 +363,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.31, y: 2.207006, z: 1.83}
+  m_Size: {x: 1.31, y: 2.207006, z: 1.1}
   m_Center: {x: -0.000002884177, y: 0.94194204, z: -0.00028204918}
 --- !u!1 &374207202
 GameObject:
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda6f3395ea08a74780f761fec13d94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
-  maxHealth: 150
+  maxHealth: 200
   bossHealthFill: {fileID: 777656482}
   bossUIRoot: {fileID: 911444881}
   hitSFX: {fileID: 0}
@@ -1346,7 +1346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3205386304314346915, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3878704308577901307, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: m_Enabled
@@ -1354,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878704308577901307, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: m_StoppingDistance
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4891155779537739051, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1727,6 +1727,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1835592528459036032, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
+      propertyPath: grabRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835592528459036032, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
+      propertyPath: holdDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7294421711014424658, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.81506
