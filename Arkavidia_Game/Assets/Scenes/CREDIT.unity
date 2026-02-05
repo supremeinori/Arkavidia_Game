@@ -558,7 +558,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1491130842}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -725,7 +725,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 4000}
+  m_SizeDelta: {x: 0, y: 5000}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &909580772
 GameObject:
@@ -1655,7 +1655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -326}
+  m_AnchoredPosition: {x: 0, y: -685}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1719964626
@@ -1679,10 +1679,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "NICE TRY\r\n\n\n\n\n\n\n\n\n\n\r\nGAME DESIGNING & PROGRAMING\n\nAnshori
-    - Inori\r\n\n\n\n\n\n3D MODELS\n\nCharacter Model - Inori lagi\nObject - Unity
-    , Anshori\n\n\n\n\n\r\nENVIRONMENT\n\nAnshori lagi\nUnity Asset\r\n\n\n\n\n\r\nMUSIC
-    & SOUND\n\r\nFromsoftware (DarkSoul)\r\n\n\n\n\n\n\r\n\n\n\n\n\n\nThanks For
-    Play\nOur First Game \r\n\r\n"
+    - Inori\r\n\n\n\n\n\n3D MODELS\n\nCharacter Model - Inori lagi\nBoss Model -
+    Mixamo.com\nObject - Unity Asset, Anshori\n\n\n\n\n\nANIMATION\n\nMixamo.com\n\n\n\n\n\nFONT\n\nDafont.com\n\n\n\n\n\r\nENVIRONMENT\n\nAnshori
+    lagi\nUnity Asset\r\n\n\n\n\n\r\nMUSIC & SOUND\n\r\nFromsoftware (DarkSoul)\r\n\n\n\n\n\n\r\n\n\n\n\n\n\nThanks
+    For Play\nOur First Game \r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b15286f670d6534caaed2da7b48e710, type: 2}
   m_sharedMaterial: {fileID: 3338919591389237706, guid: 6b15286f670d6534caaed2da7b48e710, type: 2}
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1251754247}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.24575
+  m_Size: 0.19659998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
