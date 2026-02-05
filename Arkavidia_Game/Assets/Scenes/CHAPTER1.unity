@@ -1790,10 +1790,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 62125773cd19d3d4487cd68b33530f05, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3010,7 +3010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditMusicFade
   music: {fileID: 1334020196}
-  fadeInDuration: 1
+  fadeInDuration: 0
   fadeOutDuration: 2
 --- !u!114 &2053373866
 MonoBehaviour:
