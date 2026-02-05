@@ -29916,6 +29916,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &435806495 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5549022178343785938, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
+  m_PrefabInstance: {fileID: 1196506134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &436555671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7347792012514192646, guid: b2973f18afb86314ebd01b8891182bec, type: 3}
@@ -35345,7 +35350,7 @@ PrefabInstance:
     - target: {fileID: 508901918946092951, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 435806495}
     - target: {fileID: 508901918946092951, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -35946,7 +35951,7 @@ PrefabInstance:
     - target: {fileID: 508901918946092951, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 435806495}
     - target: {fileID: 2539959099101749057, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: m_LocalPosition.y
       value: -13.6
@@ -95175,10 +95180,10 @@ PrefabInstance:
     - target: {fileID: 508901918946092951, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 435806495}
     - target: {fileID: 508901918946092951, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2539959099101749057, guid: dce7d29c838d1d548981d909f40da966, type: 3}
       propertyPath: m_LocalPosition.y

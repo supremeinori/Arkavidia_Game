@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public BossHealth bossHealth;
 
 
+
     [Header("Settings")]
     public float detectionRadius = 15f;
     public float attackRange = 2f;
@@ -19,6 +20,10 @@ public class EnemyAI : MonoBehaviour
     public float patrolIdleTime = 3f;
     public float rotationSpeed = 7f;
     public float attackDuration = 1.0f; // Duration of attack animation (no animation events needed)
+
+    [Header("Combat Settings")]
+    public int attackDamage = 10;
+
 
     private NavMeshAgent agent;
     private float cooldownTimer;
@@ -167,12 +172,13 @@ public class EnemyAI : MonoBehaviour
     }
 
     public void DealDamage()
+{
+    if (Vector3.Distance(transform.position, player.position) <= attackRange)
     {
-        if (Vector3.Distance(transform.position, player.position) <= attackRange)
-        {
-            playerHealth.TakeDamage(10); // Damage amount
-        }
+        playerHealth.TakeDamage(attackDamage);
     }
+}
+
 
     public void EndAttack()
     {
