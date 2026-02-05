@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {   
@@ -17,6 +18,10 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
+
+    [Header("Death UI")]
+    public GameObject DeathUI;
+
 
     bool isDead;
 
@@ -58,6 +63,12 @@ public class PlayerHealth : MonoBehaviour
         if (animator)
             animator.SetTrigger("Die");
 
+        if (DeathUI)
+        DeathUI.SetActive(true);
+
+    Time.timeScale = 0f; // ⏸ pause game
         // nanti bisa freeze / UI game over
     }
+
+
 }
