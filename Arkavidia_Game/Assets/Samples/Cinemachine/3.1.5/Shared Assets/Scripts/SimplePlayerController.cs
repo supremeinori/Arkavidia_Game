@@ -28,6 +28,9 @@ namespace Unity.Cinemachine.Samples
     ///
     ///  - Landed - invoked when the player lands on the ground
     /// </summary>
+    ///
+    
+    /// 
     public abstract class SimplePlayerControllerBase : MonoBehaviour, Unity.Cinemachine.IInputAxisOwner
     {
         [Tooltip("Ground speed when walking")]
@@ -83,6 +86,7 @@ namespace Unity.Cinemachine.Samples
 
         public virtual void SetStrafeMode(bool b) {}
         public abstract bool IsMoving { get; }
+        
     }
 
     /// <summary>
@@ -109,8 +113,15 @@ namespace Unity.Cinemachine.Samples
     /// The Simple Player Controller has an ad-hoc technique of resolving this discontinuity,
     /// (you can see this in the code), but it is only used in this very specific situation.
     /// </summary>
+    
+
+
+
+    
+
     public class SimplePlayerController : SimplePlayerControllerBase, ITeleportable
-    {
+    {   
+        Vector3 m_GroundNormal = Vector3.up;
         [Tooltip("Transition duration (in seconds) when the player changes velocity or rotation.")]
         public float Damping = 0.5f;
 
@@ -201,7 +212,10 @@ namespace Unity.Cinemachine.Samples
             if (!m_IsJumping)
             {
                 m_IsSprinting = Sprint.Value > 0.5f;
-                var desiredVelocity = m_LastInput * (m_IsSprinting ? SprintSpeed : Speed);
+                var desiredVelocity =
+                Vector3.ProjectOnPlane(m_LastInput, m_GroundNormal).normalized *
+                (m_IsSprinting ? SprintSpeed : Speed);
+
                 var damping = justLanded ? 0 : Damping;
                 if (Vector3.Angle(m_CurrentVelocityXZ, desiredVelocity) < 100)
                     m_CurrentVelocityXZ = Vector3.Slerp(
@@ -354,8 +368,15 @@ namespace Unity.Cinemachine.Samples
         void ApplyMotion()
         {
             if (m_Controller != null)
-                m_Controller.Move((m_CurrentVelocityY * UpDirection + m_CurrentVelocityXZ) * Time.deltaTime);
-            else
+{
+    Vector3 slopeMove =
+        Vector3.ProjectOnPlane(m_CurrentVelocityXZ, m_GroundNormal);
+
+    var move = slopeMove + m_CurrentVelocityY * UpDirection;
+
+    m_Controller.Move(move * Time.deltaTime);
+}
+
             {
                 var pos = transform.position + m_CurrentVelocityXZ * Time.deltaTime;
 
@@ -381,13 +402,19 @@ namespace Unity.Cinemachine.Samples
         }
 
         float GetDistanceFromGround(Vector3 pos, Vector3 up, float max)
-        {
-            float kExtraHeight = m_Controller == null ? 2 : 0; // start a little above the player in case it's moving down fast
-            if (UnityEngine.Physics.Raycast(pos + up * kExtraHeight, -up, out var hit,
-                    max + kExtraHeight, GroundLayers, QueryTriggerInteraction.Ignore))
-                return hit.distance - kExtraHeight;
-            return max + 1;
-        }
+{
+    float kExtraHeight = m_Controller == null ? 2 : 0;
+
+    if (Physics.Raycast(pos + up * kExtraHeight, -up, out var hit,
+        max + kExtraHeight, GroundLayers, QueryTriggerInteraction.Ignore))
+    {
+        m_GroundNormal = hit.normal;
+        return hit.distance - kExtraHeight;
+    }
+
+    m_GroundNormal = up;
+    return max + 1;
+}
 
         // ITeleportable implementation
         public void Teleport(Vector3 newPos, Quaternion newRot)
@@ -402,4 +429,4 @@ namespace Unity.Cinemachine.Samples
                 m_Controller.enabled = true;
         }
     }
-}
+} 
