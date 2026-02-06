@@ -5,32 +5,37 @@ using System.Collections;
 public class DeathUIController : MonoBehaviour
 {
     [Header("Scene To Load")]
-    public string sceneName;
+    public string sceneName = "AlamBarzah";
 
     [Header("Fade")]
-    public CanvasGroup fadeCanvas; // UI hitam untuk fade
+    public CanvasGroup fadeCanvas;
     public float fadeDuration = 1f;
 
-    // 🔘 DIPANGGIL OLEH BUTTON
+    // 🔘 DIPANGGIL BUTTON
     public void TryAgain()
     {
         StartCoroutine(FadeAndLoad());
     }
 
-    // 🌑 COROUTINE FADE + LOAD
     IEnumerator FadeAndLoad()
     {
+        // pastikan game jalan
         Time.timeScale = 1f;
 
-        float t = 0f;
-        while (t < fadeDuration)
+        if (fadeCanvas != null)
         {
-            t += Time.unscaledDeltaTime;
-            fadeCanvas.alpha = t / fadeDuration;
-            yield return null;
+            float t = 0f;
+
+            while (t < fadeDuration)
+            {
+                t += Time.unscaledDeltaTime;
+                fadeCanvas.alpha = t / fadeDuration;
+                yield return null;
+            }
+
+            fadeCanvas.alpha = 1f;
         }
 
-        fadeCanvas.alpha = 1f;
         SceneManager.LoadScene(sceneName);
     }
 }

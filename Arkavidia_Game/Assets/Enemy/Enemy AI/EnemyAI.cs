@@ -10,6 +10,9 @@ public class EnemyAI : MonoBehaviour
     [Header("Boss UI")]
     public BossHealth bossHealth;
 
+    [Header("Damage")]
+    public int attackDamage = 10;
+
 
     [Header("Settings")]
     public float detectionRadius = 15f;
@@ -170,7 +173,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.position) <= attackRange)
         {
-            playerHealth.TakeDamage(10); // Damage amount
+            playerHealth.TakeDamage(attackDamage); // Damage amount
         }
     }
 

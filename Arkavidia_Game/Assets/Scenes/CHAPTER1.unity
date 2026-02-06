@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1097790931}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DeathUIController, Assembly-CSharp
         m_MethodName: TryAgain
         m_Mode: 1
@@ -1790,11 +1790,11 @@ Transform:
   m_GameObject: {fileID: 685587565}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0014372703, y: -0.004001818, z: -0.072658695, w: 0.99734783}
-  m_LocalPosition: {x: 598.8, y: 6.19, z: 532.95}
-  m_LocalScale: {x: 5.9976587, y: 3.8747895, z: 1}
+  m_LocalPosition: {x: 1.4959106, y: 1.8309402, z: -1.864563}
+  m_LocalScale: {x: 5.9976583, y: 3.8747892, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1167758368}
   m_LocalEulerAnglesHint: {x: -0.198, y: -0.445, z: -8.333}
 --- !u!1001 &692542547
 PrefabInstance:
@@ -2019,6 +2019,10 @@ PrefabInstance:
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: attackRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
+      propertyPath: attackDamage
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: playerHealth
@@ -2942,15 +2946,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1097790930}
   - component: {fileID: 1097790933}
+  - component: {fileID: 1097790934}
   - component: {fileID: 1097790932}
-  - component: {fileID: 1097790931}
   m_Layer: 5
   m_Name: DeathUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1097790930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2972,21 +2976,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1097790931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097790929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e74ab3ac37e6c7143b39ef3c47aea58b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DeathUIController
-  sceneName: AlamBarzah
-  fadeCanvas: {fileID: 1545688772}
-  fadeDuration: 1
 --- !u!114 &1097790932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,6 +3014,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097790929}
   m_CullTransparentMesh: 1
+--- !u!114 &1097790934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097790929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74ab3ac37e6c7143b39ef3c47aea58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathUIController
+  sceneName: AlamBarzah
+  fadeCanvas: {fileID: 1545688772}
+  fadeDuration: 1
 --- !u!54 &1113009731 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3654844021200222499, guid: 6089ee87a36847d44a8b3ac76a8b4be4, type: 3}
@@ -3213,7 +3217,8 @@ Transform:
   m_LocalPosition: {x: 597.3041, y: 4.35906, z: 534.8146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 685587569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170802967 stripped
@@ -3424,12 +3429,12 @@ GameObject:
   - component: {fileID: 1270441426}
   - component: {fileID: 1270441425}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Tryagain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1270441425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4149,6 +4154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2256403350133532679, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
+      propertyPath: DeathUI
+      value: 
+      objectReference: {fileID: 1097790929}
     - target: {fileID: 2256403350133532679, guid: c88c04be3901c2848b4428df8fb9178c, type: 3}
       propertyPath: healthFill
       value: 
@@ -6831,6 +6840,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1347825337}
   - {fileID: 260532965}
+  - {fileID: 1270441428}
   - {fileID: 1363707573}
   - {fileID: 2074124479}
   - {fileID: 2008938229}
@@ -6843,7 +6853,5 @@ SceneRoots:
   - {fileID: 1028831462}
   - {fileID: 774941178}
   - {fileID: 1167758368}
-  - {fileID: 685587569}
   - {fileID: 2053373867}
-  - {fileID: 1270441428}
   - {fileID: 776346445}
