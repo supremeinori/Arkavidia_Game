@@ -557,8 +557,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491130843}
   m_HandleRect: {fileID: 1491130842}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1678,11 +1678,167 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "NICE TRY\r\n\n\n\n\n\n\n\n\n\n\r\nGAME DESIGNING & PROGRAMING\n\nAnshori
-    - Inori\r\n\n\n\n\n\n3D MODELS\n\nCharacter Model - Inori lagi\nBoss Model -
-    Mixamo.com\nObject - Unity Asset, Anshori\n\n\n\n\n\nANIMATION\n\nMixamo.com\n\n\n\n\n\nFONT\n\nDafont.com\n\n\n\n\n\r\nENVIRONMENT\n\nAnshori
-    lagi\nUnity Asset\r\n\n\n\n\n\r\nMUSIC & SOUND\n\r\nFromsoftware (DarkSoul)\r\n\n\n\n\n\n\r\n\n\n\n\n\n\nThanks
-    For Play\nOur First Game \r\n\r\n"
+  m_text: '
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    NICE TRY
+
+
+
+
+
+
+
+
+
+
+
+
+    Game Director
+
+    Anshori
+
+
+
+
+
+
+
+
+    Creative
+    Director
+
+    Pinto a.k.a Inori
+
+
+
+
+
+
+
+
+    GAME DESIGNER & PROGRAMMER
+
+
+    Anshori
+    - Pinto a.k.a Inori
+
+
+
+
+
+
+
+
+    WRITER
+
+
+    Pinto a.k.a Inori
+
+
+
+
+
+
+
+
+    3D
+    MODELS
+
+
+    Character Model - Pinto a.k.a Inori)
+
+    Boss Model - Mixamo.com
+
+    Object
+    - Unity Asset, Anshori
+
+
+
+
+
+
+
+
+    ENVIRONMENT ARTIST
+
+
+    Anshori lagi
+
+    Unity
+    Asset
+
+
+
+
+
+
+
+
+    ANIMATION
+
+
+    Mixamo.com
+
+
+
+
+
+
+
+
+    FONT
+
+
+    Dafont.com
+
+
+
+
+
+
+
+
+    MUSIC
+    & SOUND
+
+
+    Fromsoftware (DarkSoul)
+
+
+
+
+
+    Thanks For Playing Our First Game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b15286f670d6534caaed2da7b48e710, type: 2}
   m_sharedMaterial: {fileID: 3338919591389237706, guid: 6b15286f670d6534caaed2da7b48e710, type: 2}
@@ -2146,7 +2302,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1251754247}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.19659998
+  m_Size: 0.1966
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

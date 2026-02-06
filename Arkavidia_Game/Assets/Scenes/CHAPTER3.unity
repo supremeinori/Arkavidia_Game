@@ -4117,7 +4117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &776346443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7701,6 +7701,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abda4a46114d2f946b49d8f756a87408, type: 3}
+--- !u!1001 &1500377582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 399.73157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 266.0574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912239240143120624, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: HelpText
+      value: "Pencet\u2026 ah, kamu sudah tahu.\n\nDi Chapter 3 ini, kamu sudah bisa
+        membantai boss, dan kamu memiliki sedikit kekuatan untuk membalikkan waktu.
+        Kamu akan bertemu tangga yang hancur, dan dengan menahan klik kiri, kamu
+        akan memperbaikinya nanti.\n\nYa, yang harus kamu lakukan sekarang adalah
+        menang.\n\nBtw, darah dari Raja itu adalah ((53 \xD7 20) + (8 \xD7 7))\u2026
+        hahahah, hitung ya. \U0001F60F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138370430051789472, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_Name
+      value: HelpUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
 --- !u!54 &1521685330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12605,6 +12671,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1347825337}
+  - {fileID: 1500377582}
   - {fileID: 260532965}
   - {fileID: 1363707573}
   - {fileID: 2074124479}

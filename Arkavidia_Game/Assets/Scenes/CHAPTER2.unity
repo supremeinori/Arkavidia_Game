@@ -7102,7 +7102,9 @@ PrefabInstance:
         iya, ada cukup banyak musuh. Tapi kamu tidak bisa menyerang mereka, karena\u2014iya,
         itu\u2014mereka memiliki jiwa kekal. Tidak adilnya, mereka justru bisa menyerangmu.
         Yang harus kamu lakukan adalah lari secepat mungkin dari mereka sebelum kamu
-        mati.\n\nOh iya, jembatan itu akan kembali pulih jika kamu mendekatinya."
+        mati.\n\nIngat, ini adalah perjalanan sekali jalan. Jika kamu stuck, kamu
+        akan mengulang dari awal. Dan ya\u2026\n\nOh iya, jembatan itu akan kembali
+        pulih jika kamu mendekatinya."
       objectReference: {fileID: 0}
     - target: {fileID: 9138370430051789472, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
       propertyPath: m_Name
