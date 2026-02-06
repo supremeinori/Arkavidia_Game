@@ -37,14 +37,14 @@ public class GameManager : MonoBehaviour
         // =====================
         // BOSS CHECK (SAFE)
         // =====================
-        if (!hasWon && bossHealth != null)
-        {
-            // Boss object destroyed = DEAD
-            if (bossHealth.gameObject == null)
-            {
-                TryTriggerWin();
-            }
-        }
+        // if (!hasWon && bossHealth != null)
+        // {
+        //     // Boss object destroyed = DEAD
+        //     if (bossHealth.gameObject == null)
+        //     {
+        //         TryTriggerWin();
+        //     }
+        // }
     }
 
     // =========================

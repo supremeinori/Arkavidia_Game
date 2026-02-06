@@ -63,14 +63,21 @@ public class BossHealth : MonoBehaviour
     }
 
     void Die()
+{
+    Debug.Log("[BossHealth] BOSS DEAD");
+
+    if (deathSFX && audioSource)
+        audioSource.PlayOneShot(deathSFX);
+
+    HideUI();
+
+    // 🔥 PANGGIL GAME MANAGER
+    GameManager gm = FindFirstObjectByType<GameManager>();
+    if (gm != null)
     {
-        Debug.Log("[BossHealth] BOSS DEAD");
-
-        if (deathSFX && audioSource)
-            audioSource.PlayOneShot(deathSFX); // 🔊 sound mati boss
-
-        HideUI();
-
-        Destroy(gameObject);
+        gm.PlayerWon();
     }
+
+    Destroy(gameObject);
+}
 }

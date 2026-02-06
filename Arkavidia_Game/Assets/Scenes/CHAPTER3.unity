@@ -560,6 +560,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 730295295865405097, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1347825336}
+    - target: {fileID: 730295295865405097, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 906407185953479371, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1749.7616
@@ -2001,7 +2009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7261269250197842440, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7261269250197842440, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: bossUIRoot
@@ -2045,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: attackDamage
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: playerHealth
