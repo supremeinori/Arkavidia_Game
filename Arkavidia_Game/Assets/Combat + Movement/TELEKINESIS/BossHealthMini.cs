@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossHealth : MonoBehaviour
+public class BossHealthMini : MonoBehaviour
 {
     [Header("Health")]
     public float maxHealth = 500f;
@@ -18,21 +18,17 @@ public class BossHealth : MonoBehaviour
     AudioSource audioSource;
 
     [Header("Death FX")]
-    public float deathDelay = 2.5f; // waktu buat efek mati
+    public float deathDelay = 2.5f;
     public GameObject deathVFXPrefab;
 
     bool isDead;
-
-    // =============================
-    // INIT
-    // =============================
 
     void Start()
     {
         currentHealth = maxHealth;
         audioSource = GetComponent<AudioSource>();
 
-        Debug.Log($"[BossHealth] START HP = {currentHealth}");
+        Debug.Log($"[BossHealthMini] START HP = {currentHealth}");
 
         if (bossUIRoot)
             bossUIRoot.SetActive(false);
@@ -40,10 +36,6 @@ public class BossHealth : MonoBehaviour
         if (bossHealthFill)
             bossHealthFill.fillAmount = 1f;
     }
-
-    // =============================
-    // UI SHOW / HIDE
-    // =============================
 
     public void ShowUI()
     {
@@ -57,22 +49,18 @@ public class BossHealth : MonoBehaviour
             bossUIRoot.SetActive(false);
     }
 
-    // =============================
-    // DAMAGE
-    // =============================
-
     public void TakeDamage(float damage)
     {
         if (isDead) return;
 
-        Debug.Log($"[BossHealth] TakeDamage called with {damage}");
+        Debug.Log($"[BossHealthMini] TakeDamage called with {damage}");
 
         float before = currentHealth;
 
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        Debug.Log($"[BossHealth] HP: {before} -> {currentHealth}");
+        Debug.Log($"[BossHealthMini] HP: {before} -> {currentHealth}");
 
         if (bossHealthFill)
             bossHealthFill.fillAmount = currentHealth / maxHealth;
@@ -84,48 +72,30 @@ public class BossHealth : MonoBehaviour
             Die();
     }
 
-    // =============================
-    // DEATH
-    // =============================
-
     void Die()
     {
         if (isDead) return;
         isDead = true;
 
-        Debug.Log("[BossHealth] BOSS DEAD");
+        Debug.Log("[BossHealthMini] DEAD");
 
         if (deathSFX && audioSource)
             audioSource.PlayOneShot(deathSFX);
 
         HideUI();
 
-        // ❌ matikan collider supaya nggak bisa dipukul lagi
         Collider col = GetComponent<Collider>();
         if (col) col.enabled = false;
 
-        // ❌ disable AI / movement script (kalau ada)
-        MonoBehaviour ai = GetComponent<MonoBehaviour>();
-        // kalau punya script AI spesifik, disable manual di inspector
-
-        // 💥 spawn VFX
         if (deathVFXPrefab)
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
 
-        // ⏳ tunggu efek sebelum win
         StartCoroutine(DeathSequence());
     }
 
     IEnumerator DeathSequence()
     {
         yield return new WaitForSeconds(deathDelay);
-
-        // 🔥 trigger win ke GameManager
-        GameManager gm = FindFirstObjectByType<GameManager>();
-        if (gm != null)
-        {
-            gm.PlayerWon();
-        }
 
         Destroy(gameObject);
     }

@@ -153,11 +153,22 @@ public class GameManager : MonoBehaviour
     // =========================
 
     public void QuitGame()
-    {
-        Time.timeScale = 1f;
+{
+    Time.timeScale = 1f;
 
+    string scene = SceneManager.GetActiveScene().name;
+
+    // Kalau menang di CHAPTER3 → ke CREDIT
+    if (scene == "CHAPTER3" && hasWon)
+    {
+        SceneManager.LoadScene("CREDIT");
+    }
+    else
+    {
         SceneManager.LoadScene("MainMenu");
     }
+}
+
 
     // =========================
     // CURSOR

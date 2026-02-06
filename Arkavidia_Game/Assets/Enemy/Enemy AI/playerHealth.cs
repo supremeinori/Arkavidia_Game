@@ -1,26 +1,32 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
-{   
+{
     [Header("UI")]
     public Image healthFill;
 
     [Header("Health")]
     public int maxHealth = 100;
-    private int currentHealth;
+    int currentHealth;
 
     [Header("Audio")]
     public AudioClip hitSFX;
-    public AudioClip deathSFX; // 🔥 sound mati
+    public AudioClip deathSFX;
     AudioSource audioSource;
 
     [Header("Animation")]
     public Animator animator;
 
+    [Header("Death Settings")]
+    public float deathDelay = 4f;
 
     bool isDead;
+
+    // =============================
+    // INIT
+    // =============================
 
     void Start()
     {
@@ -30,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
         if (!animator)
             animator = GetComponent<Animator>();
     }
+
+    // =============================
+    // DAMAGE
+    // =============================
 
     public void TakeDamage(int amount)
     {
@@ -48,22 +58,44 @@ public class PlayerHealth : MonoBehaviour
             Die();
     }
 
-   void Die()
-{
-    isDead = true;
+    // =============================
+    // DEATH
+    // =============================
 
-    Debug.Log("Player Died");
+    void Die()
+    {
+        if (isDead) return;
+        isDead = true;
 
-    if (deathSFX && audioSource)
-        audioSource.PlayOneShot(deathSFX);
+        Debug.Log("[PlayerHealth] PLAYER DEAD");
 
-    if (animator)
-        animator.SetTrigger("Die");
+        if (deathSFX && audioSource)
+            audioSource.PlayOneShot(deathSFX);
 
-    // 🔥 SERAHKAN KE GAMEMANAGER
-    FindFirstObjectByType<GameManager>().PlayerDied();
-}
+        if (animator)
+            animator.SetTrigger("Die");
 
+        // 🚫 disable collider
+        Collider col = GetComponent<Collider>();
+        if (col) col.enabled = false;
 
+        // 🚫 disable movement / controller script
+        MonoBehaviour move = GetComponent<MonoBehaviour>();
+        // lebih bagus disable script movement spesifik kalau ada
 
+        StartCoroutine(DeathSequence());
+    }
+
+    IEnumerator DeathSequence()
+    {
+        // tunggu animasi mati
+        yield return new WaitForSeconds(deathDelay);
+
+        // 🔥 serahkan ke GameManager
+        GameManager gm = FindFirstObjectByType<GameManager>();
+        if (gm != null)
+        {
+            gm.PlayerDied();
+        }
+    }
 }
