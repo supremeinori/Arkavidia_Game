@@ -19,9 +19,6 @@ public class PlayerHealth : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
-    [Header("Death UI")]
-    public GameObject DeathUI;
-
 
     bool isDead;
 
@@ -51,24 +48,22 @@ public class PlayerHealth : MonoBehaviour
             Die();
     }
 
-    void Die()
-    {
-        isDead = true;
+   void Die()
+{
+    isDead = true;
 
-        Debug.Log("Player Died");
+    Debug.Log("Player Died");
 
-        if (deathSFX && audioSource)
-            audioSource.PlayOneShot(deathSFX); // 🔊 sound mati
+    if (deathSFX && audioSource)
+        audioSource.PlayOneShot(deathSFX);
 
-        if (animator)
-            animator.SetTrigger("Die");
+    if (animator)
+        animator.SetTrigger("Die");
 
-        if (DeathUI)
-        DeathUI.SetActive(true);
+    // 🔥 SERAHKAN KE GAMEMANAGER
+    FindFirstObjectByType<GameManager>().PlayerDied();
+}
 
-    Time.timeScale = 0f; // ⏸ pause game
-        // nanti bisa freeze / UI game over
-    }
 
 
 }

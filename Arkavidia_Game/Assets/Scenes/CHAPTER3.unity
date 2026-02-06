@@ -608,6 +608,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4114012726128598539, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1347825336}
+    - target: {fileID: 4114012726128598539, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707759013509669445, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_text
+      value: RESTART
+      objectReference: {fileID: 0}
     - target: {fileID: 7632042339323731746, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1339,6 +1351,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &465535633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7261269250197842440, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
+  m_PrefabInstance: {fileID: 723364143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda6f3395ea08a74780f761fec13d94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealth
 --- !u!54 &484287498 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3411808036834704966, guid: 6089ee87a36847d44a8b3ac76a8b4be4, type: 3}
@@ -1978,7 +2001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7261269250197842440, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7261269250197842440, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: bossUIRoot
@@ -2019,6 +2042,10 @@ PrefabInstance:
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: attackRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
+      propertyPath: attackDamage
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8751672858049160726, guid: 7c9761a8cd1e59840b461d2a79f28123, type: 3}
       propertyPath: playerHealth
@@ -2932,6 +2959,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7910658, y: 0.75481266, z: 0.79106593}
   m_Center: {x: 0.000000014901161, y: 0, z: 0.38058025}
+--- !u!1 &1093084608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2813503338640550141, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+  m_PrefabInstance: {fileID: 260532965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1097790929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4093,6 +4125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   pausePanel: {fileID: 592160525}
+  deathPanel: {fileID: 1472594524}
+  winPanel: {fileID: 1093084608}
+  bossHealth: {fileID: 465535633}
 --- !u!4 &1347825337
 Transform:
   m_ObjectHideFlags: 0
@@ -4333,6 +4368,11 @@ Rigidbody:
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6642327255443849265, guid: 6089ee87a36847d44a8b3ac76a8b4be4, type: 3}
   m_PrefabInstance: {fileID: 1028831462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472594524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2833577744790698709, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+  m_PrefabInstance: {fileID: 260532965}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &1474762495 stripped
 Rigidbody:
