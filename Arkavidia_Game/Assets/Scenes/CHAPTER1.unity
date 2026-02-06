@@ -434,7 +434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757738767726871505, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2182595980431754372, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_Color.a
@@ -535,6 +535,18 @@ PrefabInstance:
     - target: {fileID: 4319870534477242162, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441569790503141662, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561292003015308720, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135168045716168996, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
+      propertyPath: m_text
+      value: Pause?
       objectReference: {fileID: 0}
     - target: {fileID: 6135168045716168996, guid: 085cb3da603f6cf4d94421b8a6c123bb, type: 3}
       propertyPath: m_fontSize
