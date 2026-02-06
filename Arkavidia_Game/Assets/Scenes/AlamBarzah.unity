@@ -12541,6 +12541,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506768537}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &515200465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.51029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0146
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.17644
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451271811042757136, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668015293666917239, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: HelpText
+      value: blablabla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668015293666917239, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668015293666917239, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: VisibleAtStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138370430051789472, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      propertyPath: m_Name
+      value: HelpUI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9138370430051789472, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1076465002}
+  m_SourcePrefab: {fileID: 100100000, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
 --- !u!1 &529008079
 GameObject:
   m_ObjectHideFlags: 0
@@ -18849,7 +18921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &858712087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23775,6 +23847,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071346781}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1076464996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9138370430051789472, guid: 683f6ae7eaf650c4d99d32a18c3fce54, type: 3}
+  m_PrefabInstance: {fileID: 515200465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1076465002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076464996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2873e6ce678dfd4b96d958fa8fb0c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unity.Cinemachine.Samples.UIHelperNT
+  VisibleAtStart: 1
+  HelpTitle: 
+  HelpText: "Pencet E kalau kamu mau nutup dan buka helper.\n\nHahahahahaha.\n\nKamu
+    kembali dari kematian. Aku rasa kamu sudah tahu apa yang harus kamu lakukan\u2026
+    baiklah, silakan kembali ke duniamu!\n\nKamu melihat cahaya, kan, di depan sana?"
+  toggleKey: 101
+  OnHelpDismissed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1078431459
 GameObject:
   m_ObjectHideFlags: 0
@@ -36800,6 +36898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   pausePanel: {fileID: 333497906}
+  deathPanel: {fileID: 0}
+  winPanel: {fileID: 0}
+  bossHealth: {fileID: 0}
 --- !u!4 &1561053009
 Transform:
   m_ObjectHideFlags: 0
@@ -52531,6 +52632,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1561053009}
+  - {fileID: 515200465}
   - {fileID: 333497905}
   - {fileID: 951777779}
   - {fileID: 493210925}
