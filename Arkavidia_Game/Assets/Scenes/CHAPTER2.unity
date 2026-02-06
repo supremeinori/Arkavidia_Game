@@ -5677,6 +5677,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &72258948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72258950}
+  - component: {fileID: 72258949}
+  m_Layer: 0
+  m_Name: PauseUIRegister
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &72258949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72258948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d014266c631240aaa98d53e87aa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseUIRegister
+--- !u!4 &72258950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72258948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1747.7916, y: 3.93944, z: -258.10147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &72621030
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43578,6 +43622,7 @@ GameObject:
   - component: {fileID: 633009165}
   - component: {fileID: 633009164}
   - component: {fileID: 633009163}
+  - component: {fileID: 633009166}
   m_Layer: 0
   m_Name: beksound
   m_TagString: Untagged
@@ -43633,6 +43678,18 @@ Transform:
   - {fileID: 1686925735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633009166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633009162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4d014266c631240aaa98d53e87aa84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseUIRegister
 --- !u!1001 &633598784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100200,7 +100257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2570.2
+      value: -2512.69
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -100208,7 +100265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2755
+      value: -2714.4
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -110406,7 +110463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2565.04
+      value: -2507.53
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -110414,7 +110471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2755
+      value: -2714.4
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -130914,7 +130971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2581.2
+      value: -2523.69
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -130922,7 +130979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2755
+      value: -2714.4
       objectReference: {fileID: 0}
     - target: {fileID: 2300607266058993929, guid: 7f24bb582aa58444385611feb2b275bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -171436,3 +171493,4 @@ SceneRoots:
   - {fileID: 438458746}
   - {fileID: 321265594}
   - {fileID: 633009165}
+  - {fileID: 72258950}

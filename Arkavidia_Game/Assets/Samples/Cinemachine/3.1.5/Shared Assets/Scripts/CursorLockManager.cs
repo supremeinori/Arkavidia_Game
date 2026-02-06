@@ -6,6 +6,12 @@ namespace Unity.Cinemachine.Samples
 {
     public class CursorLockManager : MonoBehaviour, Unity.Cinemachine.IInputAxisOwner
     {
+        [Header("Gameplay Scenes")]
+public string[] gameplayScenes;
+
+bool pauseAllowed;
+
+
         public InputAxis CursorLock = InputAxis.DefaultMomentary;
 
         public UnityEvent OnCursorLocked = new ();
