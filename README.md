@@ -1,4 +1,5 @@
 ## Nice Try
+this is our first game, n our first experience participate game jam
  
 A third-person 3D action-adventure game built with **Unity 6** and the **Universal Render Pipeline (URP)**, featuring telekinesis combat, character animation, and a multi-chapter narrative structure. 3D character and environment assets were sourced from the Unity Asset Store and custom-created in **Blender**.
 
